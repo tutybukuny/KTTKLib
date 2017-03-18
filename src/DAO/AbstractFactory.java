@@ -6,7 +6,15 @@ public abstract class AbstractFactory {
 		
 	}
 
-	public BookDAO getBookDAO() {
+	public OrderDAO getOrderDAO() {
+		
+	}
+
+	/**
+	 * 
+	 * @param which
+	 */
+	public BookDAO getBookDAO(int which) {
 		
 	}
 
