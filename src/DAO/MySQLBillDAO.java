@@ -1,6 +1,8 @@
 package DAO;
 
 import Model.Bill;
+import Model.Cart;
+import Model.Payment;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -14,7 +16,9 @@ public class MySQLBillDAO implements BillDAO {
     public MySQLBillDAO() {
 
     }
-
+    
+    //chua xong
+    
     @Override
     public Connection getConnection() {
         return getConnection("kttk", "root", "");
@@ -74,13 +78,14 @@ public class MySQLBillDAO implements BillDAO {
 
     @Override
     public Bill getBill(int id) {
-        String sql = "SELECT * FROM bill WHERE ID = ?";
+        String sql = "SELECT * FROM bill WHERE id = ?";
         PreparedStatement ps = null;
-        try{
+        ResultSet res = null;
+        try {
             ps = conn.prepareStatement(sql);
             ps.setInt(1, id);
-            
-            ResultSet res = ps.executeQuery();
+
+            res = ps.executeQuery();
             while (res.next()) {
                 Bill bill = new Bill();
                 bill.setID(id);
@@ -88,11 +93,12 @@ public class MySQLBillDAO implements BillDAO {
                 bill.setCart(null);
                 bill.setCustomer(null);
             }
-            
-        }catch(Exception e){
+
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally{
+        } finally {
             DBUtil.closePreparedStatement(ps);
+            DBUtil.closeResultSet(res);
         }
         return null;
     }
@@ -101,5 +107,54 @@ public class MySQLBillDAO implements BillDAO {
     public ArrayList<Bill> getBills() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    private Payment getPaymentById(int id){
+        String sql = "SELECT * FROM payment WHERE id = ?";
+        PreparedStatement ps = null;
+        ResultSet res = null;
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, id);
 
+            res = ps.executeQuery();
+            while (res.next()) {
+                Payment payment = new Payment();
+                payment.setCardName(res.getString("CardName"));
+                payment.setCardNumber(res.getString("CardNumber"));
+                return payment;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            DBUtil.closePreparedStatement(ps);
+            DBUtil.closeResultSet(res);
+        }
+        return null;
+    }
+
+    private Cart getCartById(int id){
+        String sql = "SELECT * FROM cart WHERE id = ?";
+        PreparedStatement ps = null;
+        ResultSet res = null;
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, id);
+
+            res = ps.executeQuery();
+            while (res.next()) {
+                Cart cart = new Cart();
+                cart.setID(id);
+                cart.setTotalCost(res.getFloat("TotalCost"));
+                cart.setBooks(null);
+                
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            DBUtil.closePreparedStatement(ps);
+            DBUtil.closeResultSet(res);
+        }
+        return null;
+    }
+    
 }

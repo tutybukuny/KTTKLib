@@ -7,7 +7,7 @@ public class Book {
     private Author author;
     private Publisher publisher;
     private float cost;
-    BookType bookType;
+    private BookType bookType;
     private int ID;
 
     public Book() {
@@ -86,4 +86,11 @@ public class Book {
         this.ID = ID;
     }
 
+    public BookType getBookType() {
+        return bookType;
+    }
+
+    public void setBookType(BookType bookType) {
+        this.bookType = bookType;
+    }
 }
