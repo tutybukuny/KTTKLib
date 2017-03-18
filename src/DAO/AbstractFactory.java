@@ -6,10 +6,6 @@ public abstract class AbstractFactory {
 		
 	}
 
-	public OrderDAO getOrderDAO() {
-		
-	}
-
 	public BookDAO getBookDAO() {
 		
 	}
