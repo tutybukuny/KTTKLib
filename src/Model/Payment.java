@@ -2,48 +2,44 @@ package Model;
 
 public class Payment {
 
-	private String cardName;
-	private String cardNumber;
-	private int ID;
+    private String cardName;
+    private String cardNumber;
+    private int ID;
 
-	public Payment() {
-		
-	}
+    public Payment() {
 
-	public String getCardName() {
-		return this.cardName;
-	}
+    }
 
-	/**
-	 * 
-	 * @param cardName
-	 */
-	public void setCardName(String cardName) {
-		this.cardName = cardName;
-	}
+    public String getCardName() {
+        return this.cardName;
+    }
 
-	public String getCardNumber() {
-		return this.cardNumber;
-	}
+    /**
+     *
+     * @param cardName
+     */
+    public void setCardName(String cardName) {
+        this.cardName = cardName;
+    }
 
-	/**
-	 * 
-	 * @param cardNumber
-	 */
-	public void setCardNumber(String cardNumber) {
-		this.cardNumber = cardNumber;
-	}
+    public String getCardNumber() {
+        return this.cardNumber;
+    }
 
-	public int getID() {
-		
-	}
+    /**
+     *
+     * @param cardNumber
+     */
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
 
-	/**
-	 * 
-	 * @param ID
-	 */
-	public void setID(int ID) {
-		
-	}
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
 
 }

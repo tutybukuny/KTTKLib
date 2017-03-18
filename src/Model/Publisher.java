@@ -2,44 +2,40 @@ package Model;
 
 public class Publisher {
 
-	private String name;
-	private String description;
-	private int ID;
+    private String name;
+    private String description;
+    private int ID;
 
-	public String getName() {
-		return this.name;
-	}
+    public String getName() {
+        return this.name;
+    }
 
-	/**
-	 * 
-	 * @param name
-	 */
-	public void setName(String name) {
-		this.name = name;
-	}
+    /**
+     *
+     * @param name
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getDescription() {
-		return this.description;
-	}
+    public String getDescription() {
+        return this.description;
+    }
 
-	/**
-	 * 
-	 * @param description
-	 */
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    /**
+     *
+     * @param description
+     */
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	public int getID() {
-		
-	}
+    public int getID() {
+        return ID;
+    }
 
-	/**
-	 * 
-	 * @param ID
-	 */
-	public void setID(int ID) {
-		
-	}
+    public void setID(int ID) {
+        this.ID = ID;
+    }
 
 }

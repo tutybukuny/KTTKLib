@@ -2,28 +2,10 @@ package DAO;
 
 public abstract class AbstractFactory {
 
-	/**
-	 * 
-	 * @param which
-	 */
-	public abstract HumanDAO getHumanDAO(int which) {
-		
-	}
+    abstract HumanDAO getHumanDAO(int which);
 
-	/**
-	 * 
-	 * @param which
-	 */
-	public abstract BookDAO getBookDAO(int which) {
-		
-	}
+    abstract BookDAO getBookDAO(int which);
 
-	/**
-	 * 
-	 * @param which
-	 */
-	public abstract BillDAO getBillDAO(int which) {
-		
-	}
+    abstract BillDAO getBillDAO(int which);
 
 }

@@ -2,49 +2,57 @@ package Model;
 
 public class Birthday {
 
-	private int day;
-	private String month;
-	private int year;
-	private int ID;
+    private int day;
+    private String month;
+    private int year;
+    private int ID;
 
-	public Birthday() {
-		
-	}
+    public Birthday() {
 
-	public int getDay() {
-		return this.day;
-	}
+    }
 
-	/**
-	 * 
-	 * @param day
-	 */
-	public void setDay(int day) {
-		this.day = day;
-	}
+    public int getDay() {
+        return this.day;
+    }
 
-	public String getMonth() {
-		return this.month;
-	}
+    /**
+     *
+     * @param day
+     */
+    public void setDay(int day) {
+        this.day = day;
+    }
 
-	/**
-	 * 
-	 * @param month
-	 */
-	public void setMonth(String month) {
-		this.month = month;
-	}
+    public String getMonth() {
+        return this.month;
+    }
 
-	public int getYear() {
-		return this.year;
-	}
+    /**
+     *
+     * @param month
+     */
+    public void setMonth(String month) {
+        this.month = month;
+    }
 
-	/**
-	 * 
-	 * @param year
-	 */
-	public void setYear(int year) {
-		this.year = year;
-	}
+    public int getYear() {
+        return this.year;
+    }
+
+    /**
+     *
+     * @param year
+     */
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public int getID() {
+        return this.ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
 
 }

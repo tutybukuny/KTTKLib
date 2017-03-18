@@ -35,16 +35,21 @@ public class BookType {
 		this.description = description;
 	}
 
-	public int getID() {
-		
-	}
+    public Book getBook() {
+        return book;
+    }
 
-	/**
-	 * 
-	 * @param ID
-	 */
-	public void setID(int ID) {
-		
-	}
+    public void setBook(Book book) {
+        this.book = book;
+    }
+
+    public int getID() {
+        return this.ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
 
 }
