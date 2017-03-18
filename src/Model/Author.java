@@ -2,48 +2,48 @@ package Model;
 
 public class Author {
 
-    private String name;
-    private String description;
-    private int id;
+	private String name;
+	private String description;
+	private int ID;
 
-    public Author() {
+	public Author() {
+		
+	}
 
-    }
+	public String getName() {
+		return this.name;
+	}
 
-    public String getName() {
-        return this.name;
-    }
+	/**
+	 * 
+	 * @param name
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    /**
-     *
-     * @param name
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
+	public String getDescription() {
+		return this.description;
+	}
 
-    public String getDescription() {
-        return this.description;
-    }
+	/**
+	 * 
+	 * @param description
+	 */
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
-    /**
-     *
-     * @param description
-     */
-    public void setDescription(String description) {
-        this.description = description;
-    }
+	public int getID() {
+		
+	}
 
-    public int getId() {
-        return this.id;
-    }
-
-    /**
-     *
-     * @param id
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
+	/**
+	 * 
+	 * @param ID
+	 */
+	public void setID(int ID) {
+		
+	}
 
 }

@@ -1,10 +1,15 @@
 package Model;
 
-public class Publisher {
+public class BookType {
 
+	Book book;
+	private int ID;
 	private String name;
 	private String description;
-	private int ID;
+
+	public BookType() {
+		
+	}
 
 	public String getName() {
 		return this.name;

@@ -4,7 +4,7 @@ public class Account {
 
 	private String username;
 	private String password;
-	private int id;
+	private int ID;
 
 	public Account() {
 		
@@ -34,16 +34,16 @@ public class Account {
 		this.password = password;
 	}
 
-	public int getId() {
-		return this.id;
+	public int getID() {
+		
 	}
 
 	/**
 	 * 
-	 * @param id
+	 * @param ID
 	 */
-	public void setId(int id) {
-		this.id = id;
+	public void setID(int ID) {
+		
 	}
 
 }

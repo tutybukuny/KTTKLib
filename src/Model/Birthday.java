@@ -5,6 +5,7 @@ public class Birthday {
 	private int day;
 	private String month;
 	private int year;
+	private int ID;
 
 	public Birthday() {
 		

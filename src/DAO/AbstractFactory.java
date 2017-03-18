@@ -2,11 +2,11 @@ package DAO;
 
 public abstract class AbstractFactory {
 
-	public HumanDAO getHumanDAO() {
-		
-	}
-
-	public OrderDAO getOrderDAO() {
+	/**
+	 * 
+	 * @param which
+	 */
+	public abstract HumanDAO getHumanDAO(int which) {
 		
 	}
 
@@ -14,11 +14,15 @@ public abstract class AbstractFactory {
 	 * 
 	 * @param which
 	 */
-	public BookDAO getBookDAO(int which) {
+	public abstract BookDAO getBookDAO(int which) {
 		
 	}
 
-	public BillDAO getBillDAO() {
+	/**
+	 * 
+	 * @param which
+	 */
+	public abstract BillDAO getBillDAO(int which) {
 		
 	}
 

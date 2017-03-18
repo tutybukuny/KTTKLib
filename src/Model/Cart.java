@@ -1,11 +1,10 @@
 package Model;
 
-import java.util.ArrayList;
-
 public class Cart {
 
 	private ArrayList<Book> books;
 	private float totalCost;
+	private int ID;
 
 	public Cart() {
 		
@@ -33,6 +32,18 @@ public class Cart {
 	 */
 	public void setTotalCost(float totalCost) {
 		this.totalCost = totalCost;
+	}
+
+	public int getID() {
+		
+	}
+
+	/**
+	 * 
+	 * @param ID
+	 */
+	public void setID(int ID) {
+		
 	}
 
 }

@@ -5,6 +5,7 @@ public class Name {
 	private String firstName;
 	private String lastName;
 	private String middleName;
+	private int ID;
 
 	public Name() {
 		
@@ -44,6 +45,18 @@ public class Name {
 	 */
 	public void setMiddleName(String middleName) {
 		this.middleName = middleName;
+	}
+
+	public int getID() {
+		
+	}
+
+	/**
+	 * 
+	 * @param id
+	 */
+	public void setID(int id) {
+		
 	}
 
 }

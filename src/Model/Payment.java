@@ -4,6 +4,7 @@ public class Payment {
 
 	private String cardName;
 	private String cardNumber;
+	private int ID;
 
 	public Payment() {
 		
@@ -31,6 +32,18 @@ public class Payment {
 	 */
 	public void setCardNumber(String cardNumber) {
 		this.cardNumber = cardNumber;
+	}
+
+	public int getID() {
+		
+	}
+
+	/**
+	 * 
+	 * @param ID
+	 */
+	public void setID(int ID) {
+		
 	}
 
 }

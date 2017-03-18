@@ -6,6 +6,7 @@ public class Address {
 	private String city;
 	private String street;
 	private String number;
+	private int ID;
 
 	public Address() {
 		
@@ -57,6 +58,18 @@ public class Address {
 	 */
 	public void setNumber(String number) {
 		this.number = number;
+	}
+
+	public int getID() {
+		
+	}
+
+	/**
+	 * 
+	 * @param id
+	 */
+	public void setID(int id) {
+		
 	}
 
 }

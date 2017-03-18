@@ -1,12 +1,12 @@
 package Model;
 
-public class Human {
+public abstract class Human {
 
 	private Name name;
 	private Address address;
 	private Account acc;
 	private Birthday birthday;
-	private int id;
+	private int ID;
 
 	public Human() {
 		
@@ -60,16 +60,18 @@ public class Human {
 		this.birthday = birthday;
 	}
 
-	public int getId() {
-		return this.id;
+	public abstract String getDiscriminator();
+
+	public int getID() {
+		
 	}
 
 	/**
 	 * 
-	 * @param id
+	 * @param ID
 	 */
-	public void setId(int id) {
-		this.id = id;
+	public void setID(int ID) {
+		
 	}
 
 }

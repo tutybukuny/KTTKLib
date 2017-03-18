@@ -21,4 +21,12 @@ public interface HumanDAO {
 	 */
 	Human getInfo(int id);
 
+	/**
+	 * 
+	 * @param dbName
+	 * @param username
+	 * @param password
+	 */
+	Connection getConnection(String dbName, String username, String password);
+
 }

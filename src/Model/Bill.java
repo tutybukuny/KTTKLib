@@ -5,6 +5,7 @@ public class Bill {
 	private Cart cart;
 	private Customer customer;
 	private Payment payment;
+	private int ID;
 
 	public Bill() {
 		
@@ -44,6 +45,18 @@ public class Bill {
 	 */
 	public void setPayment(Payment payment) {
 		this.payment = payment;
+	}
+
+	public int getID() {
+		
+	}
+
+	/**
+	 * 
+	 * @param ID
+	 */
+	public void setID(int ID) {
+		
 	}
 
 }

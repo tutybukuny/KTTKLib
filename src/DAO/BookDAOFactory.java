@@ -6,12 +6,4 @@ public class BookDAOFactory extends AbstractFactory {
 		
 	}
 
-	/**
-	 * 
-	 * @param which
-	 */
-	public BookDAO getBookDAO(int which) {
-		
-	}
-
 }

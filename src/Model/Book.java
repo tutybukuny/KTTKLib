@@ -7,7 +7,8 @@ public class Book {
 	private Author author;
 	private Publisher publisher;
 	private float cost;
-	private int id;
+	BookType bookType;
+	private int ID;
 
 	public Book() {
 		
@@ -73,16 +74,16 @@ public class Book {
 		this.cost = cost;
 	}
 
-	public int getId() {
-		return this.id;
+	public int getID() {
+		
 	}
 
 	/**
 	 * 
-	 * @param id
+	 * @param ID
 	 */
-	public void setId(int id) {
-		this.id = id;
+	public void setID(int ID) {
+		
 	}
 
 }
