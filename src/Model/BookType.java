@@ -2,38 +2,37 @@ package Model;
 
 public class BookType {
 
-	Book book;
-	private int ID;
-	private String name;
-	private String description;
+    private int ID;
+    private String name;
+    private String description;
 
-	public BookType() {
-		
-	}
+    public BookType() {
 
-	public String getName() {
-		return this.name;
-	}
+    }
 
-	/**
-	 * 
-	 * @param name
-	 */
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return this.name;
+    }
 
-	public String getDescription() {
-		return this.description;
-	}
+    /**
+     *
+     * @param name
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	/**
-	 * 
-	 * @param description
-	 */
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     *
+     * @param description
+     */
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public int getID() {
         return this.ID;
@@ -42,6 +41,5 @@ public class BookType {
     public void setID(int ID) {
         this.ID = ID;
     }
-
 
 }
