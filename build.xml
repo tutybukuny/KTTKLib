@@ -7,7 +7,7 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="Similarity_measure" default="default" basedir=".">
+<project name="KTTKLib" default="default" basedir=".">
     <description>Builds, tests, and runs the project Similarity measure.</description>
     <import file="nbproject/build-impl.xml"/>
     <!--
@@ -76,7 +76,7 @@
              minus the .jar extension. It should not have spaces.
              <property name="store.jar.name" value="MyJarName"/>
         -->
-        <property name="store.jar.name" value="Similarity Measure"/>
+        <property name="store.jar.name" value="KTTKLib"/>
 
 
         <!-- don't edit below this line -->
