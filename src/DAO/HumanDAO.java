@@ -1,24 +1,15 @@
 package DAO;
 
 import Model.*;
-
-
+import java.sql.Connection;
 
 public interface HumanDAO {
 
-	Connection getConnection();
+    Connection getConnection();
+    
+    Connection getConnection(String dbName, String username, String password);
 
-	/**
-	 * 
-	 * @param username
-	 * @param password
-	 */
-	boolean login(String username, String password);
+    boolean login(String username, String password);
 
-	/**
-	 * 
-	 * @param id
-	 */
-	Human getInfo(int id);
-
+    Human getInfo(int id);
 }

@@ -4,7 +4,7 @@ public class Author {
 
     private String name;
     private String description;
-    private int id;
+    private int ID;
 
     public Author() {
 
@@ -34,16 +34,16 @@ public class Author {
         this.description = description;
     }
 
-    public int getId() {
-        return this.id;
+    public int getID() {
+        return this.getID();
     }
 
     /**
      *
-     * @param id
+     * @param ID
      */
-    public void setId(int id) {
-        this.id = id;
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
 }

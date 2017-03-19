@@ -2,87 +2,95 @@ package Model;
 
 public class Book {
 
-	private String name;
-	private String description;
-	private Author author;
-	private Publisher publisher;
-	private float cost;
-	private int id;
+    private String name;
+    private String description;
+    private Author author;
+    private Publisher publisher;
+    private float cost;
+    private BookType bookType;
+    private int ID;
 
-	public Book() {
-		
-	}
+    public Book() {
 
-	public String getName() {
-		return this.name;
-	}
+    }
 
-	/**
-	 * 
-	 * @param name
-	 */
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return this.name;
+    }
 
-	public String getDescription() {
-		return this.description;
-	}
+    /**
+     *
+     * @param name
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	/**
-	 * 
-	 * @param description
-	 */
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public String getDescription() {
+        return this.description;
+    }
 
-	public Author getAuthor() {
-		return this.author;
-	}
+    /**
+     *
+     * @param description
+     */
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	/**
-	 * 
-	 * @param author
-	 */
-	public void setAuthor(Author author) {
-		this.author = author;
-	}
+    public Author getAuthor() {
+        return this.author;
+    }
 
-	public Publisher getPublisher() {
-		return this.publisher;
-	}
+    /**
+     *
+     * @param author
+     */
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
 
-	/**
-	 * 
-	 * @param publisher
-	 */
-	public void setPublisher(Publisher publisher) {
-		this.publisher = publisher;
-	}
+    public Publisher getPublisher() {
+        return this.publisher;
+    }
 
-	public float getCost() {
-		return this.cost;
-	}
+    /**
+     *
+     * @param publisher
+     */
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
+    }
 
-	/**
-	 * 
-	 * @param cost
-	 */
-	public void setCost(float cost) {
-		this.cost = cost;
-	}
+    public float getCost() {
+        return this.cost;
+    }
 
-	public int getId() {
-		return this.id;
-	}
+    /**
+     *
+     * @param cost
+     */
+    public void setCost(float cost) {
+        this.cost = cost;
+    }
 
-	/**
-	 * 
-	 * @param id
-	 */
-	public void setId(int id) {
-		this.id = id;
-	}
+    public int getID() {
+        return this.getID();
+    }
 
+    /**
+     *
+     * @param ID
+     */
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public BookType getBookType() {
+        return bookType;
+    }
+
+    public void setBookType(BookType bookType) {
+        this.bookType = bookType;
+    }
 }

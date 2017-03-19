@@ -2,48 +2,48 @@ package Model;
 
 public class Account {
 
-	private String username;
-	private String password;
-	private int id;
+    private String username;
+    private String password;
+    private int ID;
 
-	public Account() {
-		
-	}
+    public Account() {
 
-	public String getUsername() {
-		return this.username;
-	}
+    }
 
-	/**
-	 * 
-	 * @param username
-	 */
-	public void setUsername(String username) {
-		this.username = username;
-	}
+    public String getUsername() {
+        return this.username;
+    }
 
-	public String getPassword() {
-		return this.password;
-	}
+    /**
+     *
+     * @param username
+     */
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-	/**
-	 * 
-	 * @param password
-	 */
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public String getPassword() {
+        return this.password;
+    }
 
-	public int getId() {
-		return this.id;
-	}
+    /**
+     *
+     * @param password
+     */
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	/**
-	 * 
-	 * @param id
-	 */
-	public void setId(int id) {
-		this.id = id;
-	}
+    public int getID() {
+        return this.getID();
+    }
+
+    /**
+     *
+     * @param ID
+     */
+    public void setID(int ID) {
+
+    }
 
 }

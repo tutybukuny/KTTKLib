@@ -1,43 +1,25 @@
 package DAO;
 
 import Model.*;
-
-
+import java.sql.Connection;
+import java.util.ArrayList;
 
 public interface BookDAO {
 
-	void getConnection();
+    Connection getConnection();
 
-	/**
-	 * 
-	 * @param book
-	 */
-	void insert(Book book);
+    Connection getConnection(String dbName, String username, String password);
 
-	/**
-	 * 
-	 * @param book
-	 */
-	void delete(Book book);
+    void insert(Book book);
 
-	/**
-	 * 
-	 * @param book
-	 */
-	void update(Book book);
+    void delete(Book book);
 
-	/**
-	 * 
-	 * @param id
-	 */
-	Book getBookById(int id);
+    void update(Book book);
 
-	/**
-	 * 
-	 * @param name
-	 */
-	ArrayList<Book> getBookByName(String name);
+    Book getBookById(int id);
 
-	ArrayList<Book> getBooks();
+    ArrayList<Book> getBookByName(String name);
+
+    ArrayList<Book> getBooks();
 
 }

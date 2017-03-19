@@ -1,75 +1,73 @@
 package Model;
 
-public class Human {
+public abstract class Human {
 
-	private Name name;
-	private Address address;
-	private Account acc;
-	private Birthday birthday;
-	private int id;
+    private Name name;
+    private Address address;
+    private Account acc;
+    private Birthday birthday;
+    private int ID;
 
-	public Human() {
-		
-	}
+    public Human() {
 
-	public Name getName() {
-		return this.name;
-	}
+    }
 
-	/**
-	 * 
-	 * @param name
-	 */
-	public void setName(Name name) {
-		this.name = name;
-	}
+    public Name getName() {
+        return this.name;
+    }
 
-	public Address getAddress() {
-		return this.address;
-	}
+    /**
+     *
+     * @param name
+     */
+    public void setName(Name name) {
+        this.name = name;
+    }
 
-	/**
-	 * 
-	 * @param address
-	 */
-	public void setAddress(Address address) {
-		this.address = address;
-	}
+    public Address getAddress() {
+        return this.address;
+    }
 
-	public Account getAcc() {
-		return this.acc;
-	}
+    /**
+     *
+     * @param address
+     */
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 
-	/**
-	 * 
-	 * @param acc
-	 */
-	public void setAcc(Account acc) {
-		this.acc = acc;
-	}
+    public Account getAcc() {
+        return this.acc;
+    }
 
-	public Birthday getBirthday() {
-		return this.birthday;
-	}
+    /**
+     *
+     * @param acc
+     */
+    public void setAcc(Account acc) {
+        this.acc = acc;
+    }
 
-	/**
-	 * 
-	 * @param birthday
-	 */
-	public void setBirthday(Birthday birthday) {
-		this.birthday = birthday;
-	}
+    public Birthday getBirthday() {
+        return this.birthday;
+    }
 
-	public int getId() {
-		return this.id;
-	}
+    /**
+     *
+     * @param birthday
+     */
+    public void setBirthday(Birthday birthday) {
+        this.birthday = birthday;
+    }
 
-	/**
-	 * 
-	 * @param id
-	 */
-	public void setId(int id) {
-		this.id = id;
-	}
+    public abstract String getDiscriminator();
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
 
 }

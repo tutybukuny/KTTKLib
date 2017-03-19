@@ -1,37 +1,23 @@
 package DAO;
 
 import Model.*;
-
-
+import java.sql.Connection;
+import java.util.ArrayList;
 
 public interface BillDAO {
 
-	Connection getConnection();
+    Connection getConnection();
+    
+    Connection getConnection(String dbName,String username,String password);
 
-	/**
-	 * 
-	 * @param bill
-	 */
-	void insert(Bill bill);
+    void insert(Bill bill);
 
-	/**
-	 * 
-	 * @param bill
-	 */
-	void delete(Bill bill);
+    void delete(Bill bill);
 
-	/**
-	 * 
-	 * @param bill
-	 */
-	void update(Bill bill);
+    void update(Bill bill);
 
-	/**
-	 * 
-	 * @param id
-	 */
-	Bill getBill(int id);
+    Bill getBill(int id);
 
-	ArrayList<Bill> getBills();
+    ArrayList<Bill> getBills();
 
 }

@@ -1,49 +1,62 @@
 package Model;
 
-public class Bill {
+import java.io.Serializable;
 
-	private Cart cart;
-	private Customer customer;
-	private Payment payment;
+public class Bill implements Serializable {
 
-	public Bill() {
-		
-	}
+    private Cart cart;
+    private Customer customer;
+    private Payment payment;
+    private int ID;
 
-	public Cart getCart() {
-		return this.cart;
-	}
+    public Bill() {
 
-	/**
-	 * 
-	 * @param cart
-	 */
-	public void setCart(Cart cart) {
-		this.cart = cart;
-	}
+    }
 
-	public Customer getCustomer() {
-		return this.customer;
-	}
+    public Cart getCart() {
+        return this.cart;
+    }
 
-	/**
-	 * 
-	 * @param customer
-	 */
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
-	}
+    /**
+     *
+     * @param cart
+     */
+    public void setCart(Cart cart) {
+        this.cart = cart;
+    }
 
-	public Payment getPayment() {
-		return this.payment;
-	}
+    public Customer getCustomer() {
+        return this.customer;
+    }
 
-	/**
-	 * 
-	 * @param payment
-	 */
-	public void setPayment(Payment payment) {
-		this.payment = payment;
-	}
+    /**
+     *
+     * @param customer
+     */
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public Payment getPayment() {
+        return this.payment;
+    }
+
+    /**
+     *
+     * @param payment
+     */
+    public void setPayment(Payment payment) {
+        this.payment = payment;
+    }
+    
+    
+
+    public int getID() {
+        return this.getID();
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
 
 }
