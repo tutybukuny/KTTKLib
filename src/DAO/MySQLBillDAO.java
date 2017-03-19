@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class MySQLBillDAO implements BillDAO {
@@ -14,18 +15,21 @@ public class MySQLBillDAO implements BillDAO {
     private Connection conn;
 
     public MySQLBillDAO() {
-
+        openConnection();
     }
     
+    public MySQLBillDAO(String dbName, String username, String password){
+        openConnection(dbName, username, password);
+    }
+
     //chua xong
-    
     @Override
-    public Connection getConnection() {
-        return getConnection("kttk", "root", "");
+    public void openConnection() {
+        openConnection("kttk", "root", "");
     }
 
     @Override
-    public Connection getConnection(String dbName, String username, String password) {
+    public void openConnection(String dbName, String username, String password) {
         String dbUrl = "jdbc:mysql://localhost:3306/" + dbName;
         String dbClass = "com.mysql.jdbc.Driver";
         try {
@@ -35,7 +39,6 @@ public class MySQLBillDAO implements BillDAO {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return conn;
     }
 
     @Override
@@ -107,8 +110,8 @@ public class MySQLBillDAO implements BillDAO {
     public ArrayList<Bill> getBills() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    private Payment getPaymentById(int id){
+
+    private Payment getPaymentById(int id) {
         String sql = "SELECT * FROM payment WHERE id = ?";
         PreparedStatement ps = null;
         ResultSet res = null;
@@ -132,7 +135,7 @@ public class MySQLBillDAO implements BillDAO {
         return null;
     }
 
-    private Cart getCartById(int id){
+    private Cart getCartById(int id) {
         String sql = "SELECT * FROM cart WHERE id = ?";
         PreparedStatement ps = null;
         ResultSet res = null;
@@ -146,7 +149,7 @@ public class MySQLBillDAO implements BillDAO {
                 cart.setID(id);
                 cart.setTotalCost(res.getFloat("TotalCost"));
                 cart.setBooks(null);
-                
+
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -156,5 +159,16 @@ public class MySQLBillDAO implements BillDAO {
         }
         return null;
     }
-    
+
+    @Override
+    public void closeConnection() {
+        try {
+            if (conn != null) {
+                conn.close();
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
 }

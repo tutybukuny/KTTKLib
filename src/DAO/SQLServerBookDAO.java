@@ -8,7 +8,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class SQLServerBookDAO implements BookDAO {
 
@@ -22,12 +25,12 @@ public class SQLServerBookDAO implements BookDAO {
     }
 
     @Override
-    public Connection getConnection() {
+    public void openConnection() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Connection getConnection(String dbName, String username, String password) {
+    public void openConnection(String dbName, String username, String password) {
         String dbUrl = "jdbc:sqlserver://" + hostName + ":1433;instance=" + sqlInstanceName + ";databaseName=" + dbName;
         String dbClass = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
         try {
@@ -37,7 +40,6 @@ public class SQLServerBookDAO implements BookDAO {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return conn;
     }
 
     @Override
@@ -265,5 +267,16 @@ public class SQLServerBookDAO implements BookDAO {
             DBUtil.closeResultSet(res);
         }
         return null;
+    }
+
+    @Override
+    public void closeConnection() {
+        if (conn != null) {
+            try {
+                conn.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
     }
 }

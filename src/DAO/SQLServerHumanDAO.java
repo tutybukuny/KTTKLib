@@ -5,26 +5,31 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class SQLServerHumanDAO implements HumanDAO {
-    
+
     String hostName = "localhost";
     String sqlInstanceName = "SQLEXPRESS";
 
     private Connection conn;
 
     public SQLServerHumanDAO() {
+        openConnection("kttk", "sa", "1234");
+    }
 
+    public SQLServerHumanDAO(String dbName, String username, String password) {
+        openConnection(dbName, username, password);
     }
 
     @Override
-    public Connection getConnection() {
+    public void openConnection() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Connection getConnection(String dbName, String username, String password) {
-         String dbUrl = "jdbc:sqlserver://" + hostName + ":1433;instance=" + sqlInstanceName + ";databaseName=" + dbName;
+    public void openConnection(String dbName, String username, String password) {
+        String dbUrl = "jdbc:sqlserver://" + hostName + ":1433;instance=" + sqlInstanceName + ";databaseName=" + dbName;
         String dbClass = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
         try {
             Class.forName(dbClass);
@@ -33,12 +38,11 @@ public class SQLServerHumanDAO implements HumanDAO {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return conn;
     }
 
     @Override
     public boolean login(String username, String password) {
-       String sql = "SELECT * FROM account WHERE Username = ? AND Password = ?";
+        String sql = "SELECT * FROM account WHERE Username = ? AND Password = ?";
         PreparedStatement ps = null;
         ResultSet res = null;
         try {
@@ -62,6 +66,15 @@ public class SQLServerHumanDAO implements HumanDAO {
     @Override
     public Human getInfo(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void closeConnection() {
+        try {
+            conn.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }
 
 }

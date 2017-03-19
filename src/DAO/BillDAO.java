@@ -1,14 +1,15 @@
 package DAO;
 
 import Model.*;
-import java.sql.Connection;
 import java.util.ArrayList;
 
 public interface BillDAO {
 
-    Connection getConnection();
+    void openConnection();
     
-    Connection getConnection(String dbName,String username,String password);
+    void openConnection(String dbName,String username,String password);
+    
+    void closeConnection();
 
     void insert(Bill bill);
 

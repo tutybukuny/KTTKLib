@@ -1,15 +1,14 @@
 package DAO;
 
 import Model.Author;
-import Model.Bill;
 import Model.Book;
 import Model.BookType;
-import Model.Payment;
 import Model.Publisher;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class MySQLBookDAO implements BookDAO {
@@ -17,16 +16,20 @@ public class MySQLBookDAO implements BookDAO {
     private Connection conn;
 
     public MySQLBookDAO() {
+        openConnection();
+    }
 
+    public MySQLBookDAO(String dbName, String username, String password) {
+        openConnection(dbName, username, password);
     }
 
     @Override
-    public Connection getConnection() {
-        return getConnection("kttk", "root", "");
+    public void openConnection() {
+        openConnection("kttk", "root", "");
     }
 
     @Override
-    public Connection getConnection(String dbName, String username, String password) {
+    public void openConnection(String dbName, String username, String password) {
         String dbUrl = "jdbc:mysql://localhost:3306/" + dbName;
         String dbClass = "com.mysql.jdbc.Driver";
         try {
@@ -36,7 +39,6 @@ public class MySQLBookDAO implements BookDAO {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return conn;
     }
 
     @Override
@@ -264,5 +266,16 @@ public class MySQLBookDAO implements BookDAO {
             DBUtil.closeResultSet(res);
         }
         return null;
+    }
+
+    @Override
+    public void closeConnection() {
+        if (conn != null) {
+            try {
+                conn.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
     }
 }

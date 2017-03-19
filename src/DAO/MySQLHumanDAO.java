@@ -1,31 +1,31 @@
 package DAO;
 
-import Model.Book;
 import Model.Human;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class MySQLHumanDAO implements HumanDAO {
 
     private Connection conn;
 
     public MySQLHumanDAO() {
-        conn = getConnection();
+        openConnection();
     }
-    
-    public MySQLHumanDAO(String dbName, String username, String password){
-        conn = getConnection(dbName, username, password);
+
+    public MySQLHumanDAO(String dbName, String username, String password) {
+        openConnection(dbName, username, password);
     }
 
     @Override
-    public Connection getConnection() {
-        return getConnection("kttk", "root", "");
+    public void openConnection() {
+        openConnection("kttk", "root", "");
     }
 
     @Override
-    public Connection getConnection(String dbName, String username, String password) {
+    public void openConnection(String dbName, String username, String password) {
         String dbUrl = "jdbc:mysql://localhost:3306/" + dbName;
         String dbClass = "com.mysql.jdbc.Driver";
         Connection con = null;
@@ -36,7 +36,6 @@ public class MySQLHumanDAO implements HumanDAO {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return con;
     }
 
     @Override
@@ -80,7 +79,6 @@ public class MySQLHumanDAO implements HumanDAO {
                         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
                     }
                 };
-                
 
                 return human;
             }
@@ -91,6 +89,17 @@ public class MySQLHumanDAO implements HumanDAO {
             DBUtil.closeResultSet(res);
         }
         return null;
+    }
+
+    @Override
+    public void closeConnection() {
+        if (conn != null) {
+            try {
+                conn.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
     }
 
 }
