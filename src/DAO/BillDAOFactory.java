@@ -8,17 +8,17 @@ public class BillDAOFactory extends AbstractFactory {
     }
 
     @Override
-    HumanDAO getHumanDAO(int which) {
+    public HumanDAO getHumanDAO(int which) {
         return null;
     }
 
     @Override
-    BookDAO getBookDAO(int which) {
+    public BookDAO getBookDAO(int which) {
         return null;
     }
 
     @Override
-    BillDAO getBillDAO(int which) {
+    public BillDAO getBillDAO(int which) {
         if(which == Const.MYSQL){
             return new MySQLBillDAO();
         }else if(which == Const.SQLSEVER){

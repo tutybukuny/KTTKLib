@@ -12,4 +12,5 @@ package Model;
 public class Const {
     public static final int MYSQL = 1;
     public static final int SQLSEVER = 2;
+    public static int USED_DATABASE = MYSQL;
 }

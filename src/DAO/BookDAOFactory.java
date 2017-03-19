@@ -9,12 +9,12 @@ public class BookDAOFactory extends AbstractFactory {
     }
 
     @Override
-    HumanDAO getHumanDAO(int which) {
+    public HumanDAO getHumanDAO(int which) {
         return null;
     }
 
     @Override
-    BookDAO getBookDAO(int which) {
+    public BookDAO getBookDAO(int which) {
         if (which == Const.MYSQL) {
             return new MySQLBookDAO();
         } else if (which == Const.SQLSEVER) {
@@ -25,7 +25,7 @@ public class BookDAOFactory extends AbstractFactory {
     }
 
     @Override
-    BillDAO getBillDAO(int which) {
+    public BillDAO getBillDAO(int which) {
         return null;
     }
 

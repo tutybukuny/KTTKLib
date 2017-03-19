@@ -9,7 +9,7 @@ public class HumanDAOFactory extends AbstractFactory {
     }
 
     @Override
-    HumanDAO getHumanDAO(int which) {
+    public HumanDAO getHumanDAO(int which) {
         if (which == Const.MYSQL) {
             return new MySQLHumanDAO();
         } else if (which == Const.SQLSEVER) {
@@ -20,12 +20,12 @@ public class HumanDAOFactory extends AbstractFactory {
     }
 
     @Override
-    BookDAO getBookDAO(int which) {
+    public BookDAO getBookDAO(int which) {
         return null;
     }
 
     @Override
-    BillDAO getBillDAO(int which) {
+    public BillDAO getBillDAO(int which) {
         return null;
     }
 

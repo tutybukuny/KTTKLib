@@ -12,7 +12,11 @@ public class MySQLHumanDAO implements HumanDAO {
     private Connection conn;
 
     public MySQLHumanDAO() {
-
+        conn = getConnection();
+    }
+    
+    public MySQLHumanDAO(String dbName, String username, String password){
+        conn = getConnection(dbName, username, password);
     }
 
     @Override
@@ -24,14 +28,15 @@ public class MySQLHumanDAO implements HumanDAO {
     public Connection getConnection(String dbName, String username, String password) {
         String dbUrl = "jdbc:mysql://localhost:3306/" + dbName;
         String dbClass = "com.mysql.jdbc.Driver";
+        Connection con = null;
         try {
             Class.forName(dbClass);
-            conn = DriverManager.getConnection(dbUrl,
+            con = DriverManager.getConnection(dbUrl,
                     username, password);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return conn;
+        return con;
     }
 
     @Override
