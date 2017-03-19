@@ -28,10 +28,10 @@ public class MySQLHumanDAO implements HumanDAO {
     public void openConnection(String dbName, String username, String password) {
         String dbUrl = "jdbc:mysql://localhost:3306/" + dbName;
         String dbClass = "com.mysql.jdbc.Driver";
-        Connection con = null;
+        conn = null;
         try {
             Class.forName(dbClass);
-            con = DriverManager.getConnection(dbUrl,
+            conn = DriverManager.getConnection(dbUrl,
                     username, password);
         } catch (Exception e) {
             e.printStackTrace();

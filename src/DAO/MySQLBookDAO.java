@@ -3,6 +3,7 @@ package DAO;
 import Model.Author;
 import Model.Book;
 import Model.BookType;
+import Model.Const;
 import Model.Publisher;
 import java.sql.Connection;
 import java.sql.DriverManager;
