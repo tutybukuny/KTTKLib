@@ -72,13 +72,7 @@ public class MySQLHumanDAO implements HumanDAO {
 
             res = ps.executeQuery();
             while (res.next()) {
-                Human human = new Human() {
-
-                    @Override
-                    public String getDiscriminator() {
-                        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                    }
-                };
+                Human human = new Human();
 
                 return human;
             }

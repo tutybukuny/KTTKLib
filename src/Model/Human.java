@@ -1,6 +1,6 @@
 package Model;
 
-public abstract class Human {
+public class Human {
 
     private Name name;
     private Address address;
@@ -59,8 +59,6 @@ public abstract class Human {
     public void setBirthday(Birthday birthday) {
         this.birthday = birthday;
     }
-
-    public abstract String getDiscriminator();
 
     public int getID() {
         return ID;

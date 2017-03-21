@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Bill implements Serializable {
 
     private Cart cart;
-    private Customer customer;
+    private Human human;
     private Payment payment;
     private int ID;
 
@@ -25,16 +25,16 @@ public class Bill implements Serializable {
         this.cart = cart;
     }
 
-    public Customer getCustomer() {
-        return this.customer;
+    public Human getCustomer() {
+        return this.human;
     }
 
     /**
      *
-     * @param customer
+     * @param human
      */
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setCustomer(Human human) {
+        this.human = human;
     }
 
     public Payment getPayment() {
@@ -52,7 +52,7 @@ public class Bill implements Serializable {
     
 
     public int getID() {
-        return this.getID();
+        return this.ID;
     }
 
     public void setID(int ID) {
