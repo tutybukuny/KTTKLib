@@ -41,15 +41,15 @@ public class BookControl {
     }
 
     public void addBook(Book book) {
-        dao.insert(book);
+        dao.insertBook(book);
     }
 
     public void deleteBook(Book book) {
-        dao.delete(book);
+        dao.deleteBook(book);
     }
 
     public void updateBook(Book book) {
-        dao.update(book);
+        dao.updateBook(book);
     }
 
     public Book getBookById(int id) {
@@ -79,12 +79,48 @@ public class BookControl {
     public ArrayList<Publisher> getPublishers() {
         return dao.getPublishers();
     }
+    
+    public void insertPublisher(Publisher publisher){
+        dao.insertPublisher(publisher);
+    }
+    
+    public void updatePublisher(Publisher publisher){
+        dao.updatePublisher(publisher);
+    }
+    
+    public void deletePublisher(Publisher publisher){
+        dao.deletePublisher(publisher);
+    }
 
     public ArrayList<BookType> getBookTypes() {
-        return dao.getBookeTypes();
+        return dao.getBookTypes();
+    }
+    
+    public void insertBookType(BookType bookType){
+        dao.insertBookType(bookType);
+    }
+    
+    public void updateBookType(BookType bookType){
+        dao.updateBookType(bookType);
+    }
+    
+    public void deleteBookType(BookType bookType){
+        dao.deleteBookType(bookType);
     }
 
     public ArrayList<Author> getAuthors() {
         return dao.getAuthors();
+    }
+    
+    public void insertAuthor(Author author){
+        dao.insertAuthor(author);
+    }
+    
+    public void updateAuthor(Author author){
+        dao.updateAuthor(author);
+    }
+    
+    public void deleteAuthor(Author author){
+        dao.deleteAuthor(author);
     }
 }

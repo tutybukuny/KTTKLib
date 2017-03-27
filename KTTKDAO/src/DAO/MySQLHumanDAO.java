@@ -2,9 +2,11 @@ package DAO;
 
 import Model.Account;
 import Model.Address;
+import Model.Author;
 import Model.Birthday;
 import Model.Human;
 import Model.Name;
+import Model.Publisher;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -42,6 +44,27 @@ public class MySQLHumanDAO implements HumanDAO {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public boolean checkUsername(String username) {
+        String sql = "SELECT * FROM account WHERE Username = ?";
+        PreparedStatement ps = null;
+        ResultSet res = null;
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, username);
+
+            res = ps.executeQuery();
+            return !res.next();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            DBUtil.closePreparedStatement(ps);
+            DBUtil.closeResultSet(res);
+        }
+
+        return false;
     }
 
     @Override
@@ -223,7 +246,7 @@ public class MySQLHumanDAO implements HumanDAO {
 
     @Override
     public void insertAddress(Human human) {
-        String sql = "INSERT INTO account (Country, City, Street, Number, HumanID) VALUES(?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO address (Country, City, Street, Number, HumanID) VALUES(?, ?, ?, ?, ?)";
         Address add = human.getAddress();
         try {
             PreparedStatement pre = conn.prepareStatement(sql);

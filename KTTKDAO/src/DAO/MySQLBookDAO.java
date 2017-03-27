@@ -42,7 +42,7 @@ public class MySQLBookDAO implements BookDAO {
     }
 
     @Override
-    public void insert(Book book) {
+    public void insertBook(Book book) {
         String sql = "INSERT INTO book(Name, Description, Cost, PublisherID, AuthorID, BookTypeID) VALUES(?,?,?,?,?,?)";
         PreparedStatement ps = null;
         try {
@@ -63,8 +63,8 @@ public class MySQLBookDAO implements BookDAO {
     }
 
     @Override
-    public void delete(Book book) {
-        String sql = "DELETE book WHERE ID = ?";
+    public void deleteBook(Book book) {
+        String sql = "DELETE from book WHERE ID = ?";
         PreparedStatement ps = null;
         try {
             ps = conn.prepareStatement(sql);
@@ -78,7 +78,7 @@ public class MySQLBookDAO implements BookDAO {
     }
 
     @Override
-    public void update(Book book) {
+    public void updateBook(Book book) {
         String sql = "UPDATE book SET AuthorID = ?,BookTypeID = ?, Cost = ?,Description = ?,Name = ?,PublisherID = ? "
                 + "WHERE ID = ?";
         PreparedStatement ps = null;
@@ -311,7 +311,7 @@ public class MySQLBookDAO implements BookDAO {
     }
 
     @Override
-    public ArrayList<BookType> getBookeTypes() {
+    public ArrayList<BookType> getBookTypes() {
         String sql = "SELECT * FROM booktype";
         PreparedStatement ps = null;
         ResultSet res = null;
@@ -364,5 +364,144 @@ public class MySQLBookDAO implements BookDAO {
             DBUtil.closeResultSet(res);
         }
         return null;
+    }
+
+    @Override
+    public void insertAuthor(Author author) {
+        String sql = "INSERT INTO author (Description, Name) VALUES(?, ?)";
+        try {
+            PreparedStatement pre = conn.prepareStatement(sql);
+            pre.setString(1, author.getDescription());
+            pre.setString(2, author.getName());
+            pre.executeUpdate();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    @Override
+    public void insertPublisher(Publisher publisher) {
+        String sql = "INSERT INTO publisher (Description, Name) VALUES(?, ?)";
+        try {
+            PreparedStatement pre = conn.prepareStatement(sql);
+            pre.setString(1, publisher.getDescription());
+            pre.setString(2, publisher.getName());
+            pre.executeUpdate();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    @Override
+    public void insertBookType(BookType bookType) {
+        String sql = "INSERT INTO booktype(Description, Name) VALUES(?, ?)";
+        PreparedStatement ps = null;
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, bookType.getName());
+            ps.setString(2, bookType.getDescription());
+
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            DBUtil.closePreparedStatement(ps);
+        }
+    }
+
+    @Override
+    public void updatePublisher(Publisher publisher) {
+        String sql = "UPDATE publisher SET Name = ?, Description = ? WHERE ID = ?";
+        PreparedStatement ps = null;
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, publisher.getName());
+            ps.setString(2, publisher.getDescription());
+            ps.setInt(3, publisher.getID());
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            DBUtil.closePreparedStatement(ps);
+        }
+    }
+
+    @Override
+    public void deletePublisher(Publisher publisher) {
+        String sql = "DELETE FROM publisher WHERE ID = ?";
+        PreparedStatement ps = null;
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, publisher.getID());
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            DBUtil.closePreparedStatement(ps);
+        }
+    }
+
+    @Override
+    public void updateBookType(BookType bookType) {
+        String sql = "UPDATE booktype SET Name = ?, Description = ? WHERE ID = ?";
+        PreparedStatement ps = null;
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, bookType.getName());
+            ps.setString(2, bookType.getDescription());
+            ps.setInt(3, bookType.getID());
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            DBUtil.closePreparedStatement(ps);
+        }
+    }
+
+    @Override
+    public void deleteBookType(BookType bookType) {
+        String sql = "DELETE FROM booktype WHERE ID = ?";
+        PreparedStatement ps = null;
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, bookType.getID());
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            DBUtil.closePreparedStatement(ps);
+        }
+    }
+
+    @Override
+    public void updateAuthor(Author author) {
+        String sql = "UPDATE author SET Name = ?, Description = ? WHERE ID = ?";
+        PreparedStatement ps = null;
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, author.getName());
+            ps.setString(2, author.getDescription());
+            ps.setInt(3, author.getID());
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            DBUtil.closePreparedStatement(ps);
+        }
+    }
+
+    @Override
+    public void deleteAuthor(Author author) {
+        String sql = "DELETE FROM author WHERE ID = ?";
+        PreparedStatement ps = null;
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, author.getID());
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            DBUtil.closePreparedStatement(ps);
+        }
     }
 }

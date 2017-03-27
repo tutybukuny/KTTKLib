@@ -9,10 +9,12 @@ import DAO.HumanDAO;
 import DAO.HumanDAOFactory;
 import Model.Account;
 import Model.Address;
+import Model.Author;
 import Model.Birthday;
 import Model.Const;
 import Model.Human;
 import Model.Name;
+import Model.Publisher;
 
 /**
  *
@@ -24,6 +26,10 @@ public class HumanControl {
     
     public HumanControl() {
         createDAO();
+    }
+    
+    public boolean checkUsername(String username) {
+        return dao.checkUsername(username);
     }
     
     public boolean checkLogin(Account acc) {

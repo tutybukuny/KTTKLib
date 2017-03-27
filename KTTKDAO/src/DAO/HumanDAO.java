@@ -28,6 +28,8 @@ public interface HumanDAO {
     
     void updateAccount(Account acc);
     
+    boolean checkUsername(String username);
+    
     Address getAddressByHumanId(int humanID);
     
     void insertAddress(Human human);

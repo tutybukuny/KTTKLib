@@ -11,11 +11,11 @@ public interface BookDAO {
     
     void closeConnection();
 
-    void insert(Book book);
+    void insertBook(Book book);
 
-    void delete(Book book);
+    void deleteBook(Book book);
 
-    void update(Book book);
+    void updateBook(Book book);
 
     Book getBookById(int id);
 
@@ -31,7 +31,25 @@ public interface BookDAO {
     
     ArrayList<Publisher> getPublishers();
     
-    ArrayList<BookType> getBookeTypes();
+    void insertPublisher(Publisher publisher);
+    
+    void updatePublisher(Publisher publisher);
+    
+    void deletePublisher(Publisher publisher);
+    
+    ArrayList<BookType> getBookTypes();
+    
+    void insertBookType(BookType bookType);
+    
+    void updateBookType(BookType bookType);
+    
+    void deleteBookType(BookType bookType);
     
     ArrayList<Author> getAuthors();
+    
+    void insertAuthor(Author author);
+    
+    void updateAuthor(Author author);
+    
+    void deleteAuthor(Author author);
 }

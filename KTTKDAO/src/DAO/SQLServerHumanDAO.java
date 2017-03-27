@@ -2,9 +2,11 @@ package DAO;
 
 import Model.Account;
 import Model.Address;
+import Model.Author;
 import Model.Birthday;
 import Model.Human;
 import Model.Name;
+import Model.Publisher;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -143,4 +145,8 @@ public class SQLServerHumanDAO implements HumanDAO {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Override
+    public boolean checkUsername(String username) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

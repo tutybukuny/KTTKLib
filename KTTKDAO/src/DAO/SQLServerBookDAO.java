@@ -41,7 +41,7 @@ public class SQLServerBookDAO implements BookDAO {
     }
 
     @Override
-    public void insert(Book book) {
+    public void insertBook(Book book) {
         String sql = "INSERT INTO book(Name, Description, Cost, PublisherID, AuthorID, BookTypeID) VALUES(?,?,?,?,?,?)";
         PreparedStatement ps = null;
         try {
@@ -62,7 +62,7 @@ public class SQLServerBookDAO implements BookDAO {
     }
 
     @Override
-    public void delete(Book book) {
+    public void deleteBook(Book book) {
         String sql = "DELETE book WHERE ID = ?";
         PreparedStatement ps = null;
         try {
@@ -77,7 +77,7 @@ public class SQLServerBookDAO implements BookDAO {
     }
 
     @Override
-    public void update(Book book) {
+    public void updateBook(Book book) {
         String sql = "UPDATE * FROM book SET AuthorID = ?,BookTypeID = ?, Cost = ?,Description = ?,Name = ?,PublisherID = ? "
                 + "WHERE ID = ?";
         PreparedStatement ps = null;
@@ -291,12 +291,57 @@ public class SQLServerBookDAO implements BookDAO {
     }
 
     @Override
-    public ArrayList<BookType> getBookeTypes() {
+    public ArrayList<BookType> getBookTypes() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public ArrayList<Author> getAuthors() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void insertPublisher(Publisher publisher) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void insertAuthor(Author author) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void insertBookType(BookType bookType) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void updatePublisher(Publisher publisher) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void deletePublisher(Publisher publisher) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void updateBookType(BookType bookType) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void deleteBookType(BookType bookType) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void updateAuthor(Author author) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void deleteAuthor(Author author) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
