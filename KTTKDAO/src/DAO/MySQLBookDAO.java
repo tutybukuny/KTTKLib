@@ -398,8 +398,8 @@ public class MySQLBookDAO implements BookDAO {
         PreparedStatement ps = null;
         try {
             ps = conn.prepareStatement(sql);
-            ps.setString(1, bookType.getName());
-            ps.setString(2, bookType.getDescription());
+            ps.setString(1, bookType.getDescription());
+            ps.setString(2, bookType.getName());
 
             ps.executeUpdate();
         } catch (Exception e) {
