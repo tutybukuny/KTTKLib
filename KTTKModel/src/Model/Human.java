@@ -1,6 +1,8 @@
 package Model;
 
-public class Human {
+import java.io.Serializable;
+
+public class Human implements Serializable {
 
     private Name name;
     private Address address;

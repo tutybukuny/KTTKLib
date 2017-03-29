@@ -1,6 +1,8 @@
 package Model;
 
-public class Birthday {
+import java.io.Serializable;
+
+public class Birthday implements Serializable {
 
     private int day;
     private String month;

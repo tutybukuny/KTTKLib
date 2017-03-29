@@ -1,6 +1,8 @@
 package Model;
 
-public class BookType {
+import java.io.Serializable;
+
+public class BookType implements Serializable {
 
     private int ID;
     private String name;
